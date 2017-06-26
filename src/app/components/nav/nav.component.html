@@ -1,0 +1,21 @@
+<nav class="navbar navbar-inverse ">
+    <div class=" container ">
+        <div class="navbar-header ">
+            <button type="button " class="navbar-toggle collapsed " data-toggle="collapse " data-target="#navbar " aria-expanded="false " aria-controls="navbar ">
+            <span class="sr-only ">Toggle navigation</span>
+            <span class="icon-bar "></span>
+            <span class="icon-bar "></span>
+            <span class="icon-bar "></span>
+          </button>
+            <a class="navbar-brand " href="/">Book Store </a>
+        </div>
+        <div id="navbar " class="collapse navbar-collapse ">
+            <ul class="nav navbar-nav ">
+                <li *ngIf="!removeCurrentLink('api/books')"><a href="api/books ">Books</a></li>
+                <li *ngIf="!removeCurrentLink('api/genres')"><a href="api/genres ">Genre</a></li>
+                <li *ngIf="removeCurrentLink('api/books')"><a href="books/add_book ">Add book</a></li>
+            </ul>
+        </div>
+        <!--/.nav-collapse -->
+    </div>
+</nav>

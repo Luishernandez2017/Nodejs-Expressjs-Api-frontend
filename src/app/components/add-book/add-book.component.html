@@ -1,0 +1,57 @@
+<a href="api/books">Go Back</a>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">Add Book</h3>
+    </div>
+
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-md-12">
+                <form #form="ngForm" (ngSubmit)="addContent(form.value)">
+                    <div class="form-group">
+                        <label for="title">Title</label>
+                        <input type="text" class="form-control" [(ngModel)]="title" name="title" id="title" placeholder="Tittle">
+                    </div>
+                    <div class="form-group">
+                        <label for="author">Author</label>
+                        <input type="text" class="form-control" [(ngModel)]="author" name="author" placeholder="Author">
+
+                    </div>
+                    <div class="form-group">
+                        <label for="genre">Genre</label>
+                        <select [(ngModel)]="genre" name="genre" class="form-control">
+                     <option *ngFor="let genre of genres"  name="genre"value="{{genre.name}}">{{genre.name}}</option>
+
+                   </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="publisher">Publisher</label>
+                        <input type="text" class="form-control" [(ngModel)]="publisher" name="publisher" placeholder="Publisher" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="pages">Pages</label>
+                        <input type="text " class="form-control" [(ngModel)]="pages" name="pages" id="pages" placeholder="pages ">
+                    </div>
+                    <div class="form-group ">
+                        <label for="image_url ">Image url</label>
+                        <input type="text " class="form-control " [(ngModel)]="image_url" name="image_url" placeholder="Image Url ">
+
+                    </div>
+                    <div class="form-group ">
+                        <label for="buy_url ">Buy Url</label>
+                        <input type="text " class="form-control " [(ngModel)]="buy_url" name="buy_url" placeholder="Buy Url ">
+
+                    </div>
+                    <div class="form-group ">
+                        <label for="overview ">overview</label>
+                        <textarea style="min-height: 100px;" type="text " class="form-control" [(ngModel)]="overview" name="overview" placeholder="Overview"></textarea>
+
+                    </div>
+
+                    <button type="submit " id="submitBtn " class="btn btn-primary ">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,39 @@
+<div *ngIf="book" class="panel panel-default">
+    <div class="panel-heading">
+        <h3>{{title}} <a class="btn btn-success pull-right" href="api/books">  Go Back</a>
+        </h3>
+    </div>
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-md-4">
+
+                <img src="{{book.image_url}}" />
+            </div>
+            <div class="col-md-8">
+
+                <form #form="ngForm" (ngSubmit)="submit(form.value)">
+
+                    <ul>
+                        <li class="list-group-item"><label for="image_url">Image Url:</label><input name="image_url" class="form-control" [(ngModel)]="image_url"></li>
+
+                        <li class="list-group-item "><label for="title">Title:</label><input name="title" class=" form-control " [(ngModel)]="title"></li>
+                        <li class="list-group-item "><label for="author">Author:</label><input name="author" class=" form-control " [(ngModel)]="author"></li>
+                        <li class="list-group-item "><label for="genre">Genre:</label><input name="genre" class=" form-control " [(ngModel)]="genre"></li>
+                        <li class="list-group-item "><label for="publisher">publisher:</label><input name="publisher" class=" form-control " [(ngModel)]="publisher"></li>
+                        <li class="list-group-item "><label for="pages">Title:</label><input name="pages" class=" form-control " [(ngModel)]="pages"></li>
+                        <li class="list-group-item "><label for="buy_url">Buy Url:</label><input name="buy_url" class="form-control " [(ngModel)]="buy_url"></li>
+                        <li class="list-group-item">
+                            <label for="overview">Overview:</label>
+                            <textarea style="min-height: 100px;" class="form-control" id="some-value" name="overview" [(ngModel)]="overview">{{overview}}</textarea>
+                        </li>
+                        <br/>
+                        <button class="btn btn-primary " type="submit" name="submit">Update Book</button>
+                        <button (click)="delete()" class="btn btn-danger pull-right">Delete Book</button>
+                    </ul>
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
